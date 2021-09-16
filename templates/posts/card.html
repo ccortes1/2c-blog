@@ -1,0 +1,15 @@
+<div class="card">
+    <div class="card-body">
+        <a href="{% url 'posts:detail' post.id %}">
+            <h5 class="card-title">{{ post.title }}</h5>
+        </a>
+        <h6 class="card-subtitle mb-2 text-muted">{{ post.category }}</h6>
+        <p class="card-text">{{ post.author }}</p>
+        {% if post.author == request.user %}
+            <a href="{% url 'posts:update' %}" class="ml-5 btn btn-sm btn-outline-info">
+                Edit Post
+            </a>
+        {% endif %}
+
+    </div>
+</div>

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block head_content %}
+<title>Profile</title>
+{% endblock %}
+
+{% block container %}
+<h1>Hola</h1>
+<div class="container">
+    {% for post in posts %}
+        {% include "posts/card.html" %}
+    {% endfor %}
+</div>
+{% endblock %}
+

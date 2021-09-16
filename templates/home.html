@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block head_content %}
+<title>Home</title>
+{% endblock %}
+{% block container %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <a href="{% url 'posts:home' %}">
+                <button class="btn btn-secondary btn-lg"> Read Blog </button>
+            </a>
+        </div>
+        <div class="col-sm">
+            <a href="{% url 'posts:CreateBlog' %}">
+                <button class="btn btn-primary btn-lg"> Write Blog </button>
+            </a>
+        </div>
+    </div>
+
+</div>
+{% include "pagination.html" %}
+{% endblock %}

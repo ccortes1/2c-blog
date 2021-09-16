@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block head_content %}
+<title>{{ post.title }}</title>
+{% endblock %}
+
+{% block container %}
+<div class="container">
+    <div class="row">
+        <h2>Post</h2>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="card-text">{{ post.text_body }}</p>
+    
+        </div>
+    </div>
+    <div class="row">
+        <h4 class="row">comments</h4>
+        {% for comment in post.comment.all %}
+        <p class="row">{{ comment.text }}</p>
+        {% endfor %}
+    </div>
+    
+    <a href="{% url 'posts:CreateComment' post.id %}">
+        <button>Comment</button>
+
+</div>
+</a>
+{% endblock %}
